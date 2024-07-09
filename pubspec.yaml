@@ -13,6 +13,10 @@ dependencies:
   cupertino_icons: ^1.0.6
   #asset gen
   flutter_gen: ^5.6.0
+  #state managment
+  bloc: ^8.1.4
+  flutter_bloc: ^8.1.6
+  
 
 dev_dependencies:
   flutter_test:
