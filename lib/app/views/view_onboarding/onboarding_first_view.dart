@@ -1,4 +1,3 @@
-import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:bazar_books_mobile_app/app/router/app_router.dart';
 import 'package:bazar_books_mobile_app/core/constants/color_constants.dart';
@@ -23,6 +22,19 @@ class OnboardingFirstView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Padding(
+              padding: EdgeInsets.only(right: context.highValue * 3),
+              child: TextButtonWidget(
+                onPressed: () {
+                  context.router.replaceAll([const SplashViewRoute()]);
+                },
+                text: 'Skip',
+                textStyle: const TextStyle(
+                  fontSize: 18,
+                ),
+                textColor: ColorConstants.primaryColor,
+              ),
+            ),
             Image.asset(Assets.images.onboardingOne.path),
             SizedBox(
               height: context.sizedHeightBoxLow.height,
