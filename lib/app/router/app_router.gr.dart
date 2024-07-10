@@ -27,6 +27,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const OnboardingSecondView(),
       );
     },
+    OnboardingThirdViewRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const OnboardingThirdView(),
+      );
+    },
     SplashViewRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -60,6 +66,20 @@ class OnboardingSecondViewRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'OnboardingSecondViewRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [OnboardingThirdView]
+class OnboardingThirdViewRoute extends PageRouteInfo<void> {
+  const OnboardingThirdViewRoute({List<PageRouteInfo>? children})
+      : super(
+          OnboardingThirdViewRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'OnboardingThirdViewRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
