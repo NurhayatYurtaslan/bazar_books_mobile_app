@@ -64,7 +64,7 @@ class OnboardingFirstView extends StatelessWidget {
             CustomButton(
               buttonText: 'Continue',
               onPressed: () {
-                context.router.replaceAll([const SplashViewRoute()]);
+                context.router.replaceAll([const OnboardingSecondViewRoute()]);
               },
               buttonBgColor: Theme.of(context).primaryColor,
               buttonTextColor: ColorConstants.textDark,
