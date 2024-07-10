@@ -18,6 +18,7 @@ class SplashView extends StatelessWidget {
       child: BlocBuilder<SplashViewModel, SplashState>(
         builder: (context, state) {
           return Scaffold(
+            appBar: AppBar(backgroundColor: ColorConstants.primaryColor,),
               body: Container(
             color: ColorConstants.primaryColor,
             child: Center(child: Image.asset(Assets.images.logo.path)),
