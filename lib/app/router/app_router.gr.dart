@@ -53,7 +53,7 @@ class OnboardingViewRoute extends PageRouteInfo<OnboardingViewRouteArgs> {
 class OnboardingViewRouteArgs {
   const OnboardingViewRouteArgs();
 
-  
+
 
   @override
   String toString() {
