@@ -15,22 +15,12 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
-    OnboardingFirstViewRoute.name: (routeData) {
+    OnboardingViewRoute.name: (routeData) {
+      routeData.argsAs<OnboardingViewRouteArgs>(
+          orElse: () => const OnboardingViewRouteArgs());
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const OnboardingFirstView(),
-      );
-    },
-    OnboardingSecondViewRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const OnboardingSecondView(),
-      );
-    },
-    OnboardingThirdViewRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const OnboardingThirdView(),
+        child: OnboardingView(),
       );
     },
     SplashViewRoute.name: (routeData) {
@@ -43,45 +33,32 @@ abstract class _$AppRouter extends RootStackRouter {
 }
 
 /// generated route for
-/// [OnboardingFirstView]
-class OnboardingFirstViewRoute extends PageRouteInfo<void> {
-  const OnboardingFirstViewRoute({List<PageRouteInfo>? children})
-      : super(
-          OnboardingFirstViewRoute.name,
+/// [OnboardingView]
+class OnboardingViewRoute extends PageRouteInfo<OnboardingViewRouteArgs> {
+  OnboardingViewRoute({
+    
+    List<PageRouteInfo>? children,
+  }) : super(
+          OnboardingViewRoute.name,
+          args: OnboardingViewRouteArgs(),
           initialChildren: children,
         );
 
-  static const String name = 'OnboardingFirstViewRoute';
+  static const String name = 'OnboardingViewRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<OnboardingViewRouteArgs> page =
+      PageInfo<OnboardingViewRouteArgs>(name);
 }
 
-/// generated route for
-/// [OnboardingSecondView]
-class OnboardingSecondViewRoute extends PageRouteInfo<void> {
-  const OnboardingSecondViewRoute({List<PageRouteInfo>? children})
-      : super(
-          OnboardingSecondViewRoute.name,
-          initialChildren: children,
-        );
+class OnboardingViewRouteArgs {
+  const OnboardingViewRouteArgs();
 
-  static const String name = 'OnboardingSecondViewRoute';
+  
 
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [OnboardingThirdView]
-class OnboardingThirdViewRoute extends PageRouteInfo<void> {
-  const OnboardingThirdViewRoute({List<PageRouteInfo>? children})
-      : super(
-          OnboardingThirdViewRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'OnboardingThirdViewRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
+  @override
+  String toString() {
+    return 'OnboardingViewRouteArgs{}';
+  }
 }
 
 /// generated route for
