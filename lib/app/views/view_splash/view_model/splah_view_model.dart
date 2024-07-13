@@ -15,7 +15,7 @@ class SplashViewModel extends Bloc<SplashEvent, SplashState> {
       SplashInitialEvent event, Emitter<SplashState> emit) async {
     Future.delayed(const Duration(seconds: 3), () async {
       // Assuming you have a correct context here
-      event.context.router.replace(const OnboardingFirstViewRoute());
+      event.context.router.replace(OnboardingViewRoute());
     });
   }
 }
