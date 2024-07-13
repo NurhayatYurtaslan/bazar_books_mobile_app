@@ -1,9 +1,12 @@
-abstract class OnboardingEvent{}
+import 'package:flutter/material.dart';
+
+abstract class OnboardingEvent {}
 
 class OnboardingInitial extends OnboardingEvent {}
 
-class CurrentPageIndexEvent extends OnboardingEvent{
-  final int currentIndex;
-
-  CurrentPageIndexEvent(this.currentIndex);
+class IndicatorIncremeentEvent extends OnboardingEvent {
+  int page;
+  BuildContext context;
+  PageController pageController = PageController();
+  IndicatorIncremeentEvent(this.page, this.context, this.pageController);
 }
