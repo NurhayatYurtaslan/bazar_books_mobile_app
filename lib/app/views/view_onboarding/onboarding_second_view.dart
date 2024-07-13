@@ -64,7 +64,7 @@ class OnboardingSecondView extends StatelessWidget {
         ),
         SizedBox(height: context.sizedHeightBoxExtraHigh.height),
         CustomButton(
-          buttonText: 'Get Started',
+          buttonText: 'Continue',
           onPressed: () {
             context.router.replaceAll([const OnboardingThirdViewRoute()]);
           },
