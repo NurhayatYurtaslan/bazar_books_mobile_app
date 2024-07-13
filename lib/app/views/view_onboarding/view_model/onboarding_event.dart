@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 
 abstract class OnboardingEvent {}
 
-class OnboardingInitial extends OnboardingEvent {}
+class OnboardingInitial extends OnboardingEvent {
+  OnboardingInitial(int i);
+}
 
-class IndicatorIncremeentEvent extends OnboardingEvent {
+class IndicatorIncrementEvent extends OnboardingEvent {
   int page;
   BuildContext context;
   PageController pageController = PageController();
-  IndicatorIncremeentEvent(this.page, this.context, this.pageController);
+  IndicatorIncrementEvent(this.page, this.context, this.pageController);
 }
