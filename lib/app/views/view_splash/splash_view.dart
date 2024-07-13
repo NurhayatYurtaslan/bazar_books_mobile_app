@@ -1,3 +1,4 @@
+import 'package:auto_route/annotations.dart';
 import 'package:bazar_books_mobile_app/app/views/view_splash/view_model/splah_view_model.dart';
 import 'package:bazar_books_mobile_app/app/views/view_splash/view_model/splash_event.dart';
 import 'package:bazar_books_mobile_app/app/views/view_splash/view_model/splash_state.dart';
@@ -6,6 +7,7 @@ import 'package:bazar_books_mobile_app/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+@RoutePage()
 class SplashView extends StatelessWidget {
   const SplashView({super.key});
 
@@ -16,6 +18,7 @@ class SplashView extends StatelessWidget {
       child: BlocBuilder<SplashViewModel, SplashState>(
         builder: (context, state) {
           return Scaffold(
+            appBar: AppBar(backgroundColor: ColorConstants.primaryColor,),
               body: Container(
             color: ColorConstants.primaryColor,
             child: Center(child: Image.asset(Assets.images.logo.path)),

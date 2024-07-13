@@ -118,9 +118,18 @@ extension SizedBoxNum on BuildContext {
   SizedBox get sizedHeightBoxNormal => SizedBox(height: constNormalValue);
   SizedBox get sizedHeightBoxMedium => const SizedBox(height: 24);
   SizedBox get sizedHeightBoxHigh => const SizedBox(height: 32);
+  SizedBox get sizedHeightBoxExtraHigh => const SizedBox(
+        height: 80,
+      );
+  SizedBox get sizedHButton => const SizedBox(
+        height: 50,
+      );
 
   SizedBox get sizedWidthBoxLow => const SizedBox(width: 8);
   SizedBox get sizedWidthBoxNormal => const SizedBox(width: 16);
   SizedBox get sizedWidthBoxMedium => const SizedBox(width: 24);
   SizedBox get sizedWidthBoxHigh => const SizedBox(width: 32);
+  SizedBox get sizedWButton => const SizedBox(
+        width: 300,
+      );
 }
