@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "839364088106",
+    "firebase_url": "https://chat-app-844d4-default-rtdb.firebaseio.com",
+    "project_id": "chat-app-844d4",
+    "storage_bucket": "chat-app-844d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:839364088106:android:b025f74ec098e029e20e53",
+        "android_client_info": {
+          "package_name": "com.example.bazar_books_mobile_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6lSZhHxjnJLN4z436BH4HHgHQAc_C2mE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:839364088106:android:e045e51904954506e20e53",
+        "android_client_info": {
+          "package_name": "com.example.chat_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6lSZhHxjnJLN4z436BH4HHgHQAc_C2mE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
