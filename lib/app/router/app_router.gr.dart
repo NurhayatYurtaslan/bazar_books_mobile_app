@@ -16,11 +16,17 @@ abstract class _$AppRouter extends RootStackRouter {
   @override
   final Map<String, PageFactory> pagesMap = {
     OnboardingViewRoute.name: (routeData) {
-      routeData.argsAs<OnboardingViewRouteArgs>(
+      final args = routeData.argsAs<OnboardingViewRouteArgs>(
           orElse: () => const OnboardingViewRouteArgs());
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: OnboardingView(),
+        child: OnboardingView(key: args.key),
+      );
+    },
+    SigninViewRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SigninView(),
       );
     },
     SplashViewRoute.name: (routeData) {
@@ -36,11 +42,11 @@ abstract class _$AppRouter extends RootStackRouter {
 /// [OnboardingView]
 class OnboardingViewRoute extends PageRouteInfo<OnboardingViewRouteArgs> {
   OnboardingViewRoute({
-    
+    Key? key,
     List<PageRouteInfo>? children,
   }) : super(
           OnboardingViewRoute.name,
-          args: OnboardingViewRouteArgs(),
+          args: OnboardingViewRouteArgs(key: key),
           initialChildren: children,
         );
 
@@ -51,14 +57,28 @@ class OnboardingViewRoute extends PageRouteInfo<OnboardingViewRouteArgs> {
 }
 
 class OnboardingViewRouteArgs {
-  const OnboardingViewRouteArgs();
+  const OnboardingViewRouteArgs({this.key});
 
-
+  final Key? key;
 
   @override
   String toString() {
-    return 'OnboardingViewRouteArgs{}';
+    return 'OnboardingViewRouteArgs{key: $key}';
   }
+}
+
+/// generated route for
+/// [SigninView]
+class SigninViewRoute extends PageRouteInfo<void> {
+  const SigninViewRoute({List<PageRouteInfo>? children})
+      : super(
+          SigninViewRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SigninViewRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for

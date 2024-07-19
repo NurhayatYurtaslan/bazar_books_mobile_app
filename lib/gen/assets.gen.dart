@@ -24,12 +24,16 @@ class $AssetsImagesGen {
   AssetGenImage get onboardingTwo =>
       const AssetGenImage('assets/images/Onboarding_two.png');
 
+  /// File path: assets/images/app_logo.png
+  AssetGenImage get appLogo =>
+      const AssetGenImage('assets/images/app_logo.png');
+
   /// File path: assets/images/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
 
   /// List of all assets
   List<AssetGenImage> get values =>
-      [onboardingOne, onboardingThree, onboardingTwo, logo];
+      [onboardingOne, onboardingThree, onboardingTwo, appLogo, logo];
 }
 
 class Assets {
