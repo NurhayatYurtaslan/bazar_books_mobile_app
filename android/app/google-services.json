@@ -27,9 +27,9 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:839364088106:android:e045e51904954506e20e53",
+        "mobilesdk_app_id": "1:839364088106:android:5e477577af1fc3c2e20e53",
         "android_client_info": {
-          "package_name": "com.example.chat_app"
+          "package_name": "om.example.bazar_books_mobile_app"
         }
       },
       "oauth_client": [],
