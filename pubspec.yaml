@@ -11,28 +11,48 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.6
+  
   #asset gen
   flutter_gen: ^5.6.0
+
   #state managment
   bloc: ^8.1.4
   flutter_bloc: ^8.1.6
+
   #auto route
   auto_route: ^8.2.0
+
   #indicator
   dots_indicator: ^3.0.0
+
   #firebase
   cloud_firestore: ^5.1.0
   firebase_core: ^3.2.0
   firebase_auth: ^5.1.2
-  
+  firebase_crashlytics: ^4.0.4
+  uuid:
+
+  #for freezed
+  freezed_annotation: ^2.4.4
+  json_annotation: ^4.9.0
+
   
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.0
+
+
+  #code generation
   build_runner:
-  flutter_gen_runner:
+  freezed: ^2.5.2
   auto_route_generator:
+
+#linting
+  flutter_gen_runner:
+  flutter_lints: ^3.0.0
+  json_serializable: ^6.8.0
+
+  #app icons
   flutter_launcher_icons: ^0.13.1
 flutter_icons:
   android: "launcher_icon"
