@@ -4,6 +4,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:bazar_books_mobile_app/app/router/app_router.dart';
 import 'package:bazar_books_mobile_app/app/views/view_signin/view_model/signin_event.dart';
 import 'package:bazar_books_mobile_app/app/views/view_signin/view_model/signin_state.dart';
+import 'package:bazar_books_mobile_app/core/repository/model/auth/signin/signin_request_model.dart';
 import 'package:bazar_books_mobile_app/core/repository/service/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
@@ -20,10 +21,15 @@ class SigninViewModel extends Bloc<SigninEvent, SigninState> {
 
   AuthService authService = AuthService();
 
-  Future<FutureOr<void>> _initial(SigninInitialEvent event, Emitter<SigninState> emit) async {
+  Future<FutureOr<void>> _initial(
+      SigninInitialEvent event, Emitter<SigninState> emit) async {
+    FocusManager.instance.primaryFocus?.unfocus();
     try {
+      await authService.signIn(SignInRequestModel(
+          email: emailController.text.trim(),
+          password: passwordController.text.trim()));
       Future.delayed(const Duration(seconds: 2), () {
-        event.context.router.push(const SplashViewRoute());
+        event.context.router.replace(OnboardingViewRoute());
       });
     } catch (e, stack) {
       FirebaseCrashlytics.instance.recordError(e, stack, fatal: true);
