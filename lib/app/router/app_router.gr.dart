@@ -26,7 +26,7 @@ abstract class _$AppRouter extends RootStackRouter {
     SigninViewRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const SigninView(),
+        child: SignInView(),
       );
     },
     SplashViewRoute.name: (routeData) {
