@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 class CustomTextInput extends StatelessWidget {
   final String label;
   final String? hintText;
-  final Icon icon;
   final TextEditingController controller;
   final TextInputType? keyboardType;
   final TextInputAction? textInputAction;
@@ -15,7 +14,6 @@ class CustomTextInput extends StatelessWidget {
   CustomTextInput({
     super.key,
     required this.label,
-    required this.icon,
     required this.controller,
     this.keyboardType,
     this.textInputAction,
@@ -40,30 +38,43 @@ class CustomTextInput extends StatelessWidget {
             validator: validator,
             cursorColor: Colors.black,
             decoration: InputDecoration(
-                labelStyle: TextStyle(color: Colors.black),
-                enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(context.lowRadius),
-                    borderSide: BorderSide(
-                        color: Theme.of(context).colorScheme.onBackground)),
-                focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(context.lowRadius),
-                    borderSide: BorderSide(
-                        color: Theme.of(context).colorScheme.onBackground)),
-                errorBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(context.lowRadius),
-                    borderSide:
-                        BorderSide(color: Theme.of(context).colorScheme.error)),
-                disabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(context.lowRadius),
-                    borderSide: BorderSide(
-                        color: Theme.of(context).colorScheme.onBackground)),
-                focusedErrorBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(context.lowRadius),
-                    borderSide:
-                        BorderSide(color: Theme.of(context).colorScheme.error)),
-                prefixIcon: icon,
-                label: Text(label),
-                hintText: hintText),
+              labelStyle: TextStyle(color: Colors.grey),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.all(context.lowRadius),
+                borderSide: BorderSide(
+                  color: Theme.of(context).primaryColor,
+                ),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.all(context.lowRadius),
+                borderSide: BorderSide(
+                  color: Theme.of(context).colorScheme.onBackground,
+                ),
+              ),
+              errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.all(context.lowRadius),
+                borderSide: BorderSide(
+                  color: Theme.of(context).colorScheme.error,
+                ),
+              ),
+              disabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.all(context.lowRadius),
+                borderSide: BorderSide(
+                  color: Theme.of(context).colorScheme.onBackground,
+                ),
+              ),
+              focusedErrorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.all(context.lowRadius),
+                borderSide: BorderSide(
+                  color: Theme.of(context).colorScheme.error,
+                ),
+              ),
+
+              label: Text(label),
+              hintText: hintText,
+              floatingLabelBehavior:
+                  FloatingLabelBehavior.never, // Animasyonu kapatır
+            ),
           ),
         )
       ],
