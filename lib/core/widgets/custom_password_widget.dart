@@ -4,8 +4,7 @@ import 'package:flutter/services.dart';
 
 class CustomPasswordTextField extends StatefulWidget {
   const CustomPasswordTextField(
-      {Key? key, this.controller, this.validator, this.inputFormatters})
-      : super(key: key);
+      {super.key, this.controller, this.validator, this.inputFormatters});
   final TextEditingController? controller;
   final String? Function(String?)? validator;
   final List<TextInputFormatter>? inputFormatters;
@@ -39,29 +38,28 @@ class _PasswordTextFieldState extends State<CustomPasswordTextField> {
         inputFormatters: widget.inputFormatters,
         cursorColor: Colors.black,
         decoration: InputDecoration(
+          labelStyle: const TextStyle(color: Colors.grey),
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.all(context.lowRadius),
-              borderSide: BorderSide(
-                  color: Theme.of(context).colorScheme.onBackground)),
+              borderSide: BorderSide(color: Theme.of(context).primaryColor)),
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.all(context.lowRadius),
-              borderSide: BorderSide(
-                  color: Theme.of(context).colorScheme.onBackground)),
+              borderSide: BorderSide(color: Theme.of(context).primaryColor)),
           errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.all(context.lowRadius),
               borderSide:
                   BorderSide(color: Theme.of(context).colorScheme.error)),
           disabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.all(context.lowRadius),
-              borderSide: BorderSide(
-                  color: Theme.of(context).colorScheme.onBackground)),
+              borderSide: BorderSide(color: Theme.of(context).primaryColor)),
           focusedErrorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.all(context.lowRadius),
               borderSide:
                   BorderSide(color: Theme.of(context).colorScheme.error)),
-          prefixIcon: Icon(Icons.key_outlined),
+
           suffixIcon: _onVisiblityIcon(),
-          labelText: 'password,'
+          labelText: 'Your password',
+          floatingLabelBehavior: FloatingLabelBehavior.never,
           // hintText: hintText,
         ),
       ),
@@ -70,11 +68,12 @@ class _PasswordTextFieldState extends State<CustomPasswordTextField> {
 
   IconButton _onVisiblityIcon() {
     return IconButton(
+      color: Colors.grey,
       onPressed: _changeLoading,
       icon: AnimatedCrossFade(
         duration: const Duration(milliseconds: 500),
-        firstChild: const Icon(Icons.visibility_outlined),
-        secondChild: const Icon(Icons.visibility_off_outlined),
+        firstChild: const Icon(Icons.visibility_off_outlined),
+        secondChild: const Icon(Icons.visibility_outlined),
         crossFadeState:
             _isSecure ? CrossFadeState.showFirst : CrossFadeState.showSecond,
       ),
