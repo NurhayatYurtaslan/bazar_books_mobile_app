@@ -11,7 +11,7 @@ class CustomTextInput extends StatelessWidget {
   final List<TextInputFormatter>? inputFormatters;
   final String? Function(String?)? validator;
 
-  CustomTextInput({
+  const CustomTextInput({
     super.key,
     required this.label,
     required this.controller,
@@ -38,7 +38,7 @@ class CustomTextInput extends StatelessWidget {
             validator: validator,
             cursorColor: Colors.black,
             decoration: InputDecoration(
-              labelStyle: TextStyle(color: Colors.grey),
+              labelStyle: const TextStyle(color: Colors.grey),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.all(context.lowRadius),
                 borderSide: BorderSide(
@@ -48,7 +48,7 @@ class CustomTextInput extends StatelessWidget {
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.all(context.lowRadius),
                 borderSide: BorderSide(
-                  color: Theme.of(context).colorScheme.onBackground,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
               ),
               errorBorder: OutlineInputBorder(
@@ -60,7 +60,7 @@ class CustomTextInput extends StatelessWidget {
               disabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.all(context.lowRadius),
                 borderSide: BorderSide(
-                  color: Theme.of(context).colorScheme.onBackground,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
               ),
               focusedErrorBorder: OutlineInputBorder(
