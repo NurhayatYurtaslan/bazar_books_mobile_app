@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:bazar_books_mobile_app/app/router/app_router.dart';
 import 'package:bazar_books_mobile_app/app/views/view_signin/view_model/signin_event.dart';
@@ -12,45 +11,61 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SigninViewModel extends Bloc<SigninEvent, SigninState> {
-  SigninViewModel() : super(SigninInitialState()) {
-    on<SigninInitialEvent>(_initial);
+  SigninViewModel({required Null Function() onSuccessCallback, required Null Function(dynamic errorMessage) onErrorCallback}) : super(SigninInitialState()) {
+    on<SigninInitialEvent>(_onSignin);
+    on<SigninWithGoogleEvent>(_onSigninWithGoogle);
   }
 
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final AuthService authService = AuthService();
 
-  AuthService authService = AuthService();
-
-  Future<FutureOr<void>> _initial(
+  Future<void> _onSignin(
       SigninInitialEvent event, Emitter<SigninState> emit) async {
     FocusManager.instance.primaryFocus?.unfocus();
+    emit(SigninLoadingState());
     try {
       await authService.signIn(SignInRequestModel(
           email: emailController.text.trim(),
           password: passwordController.text.trim()));
-      Future.delayed(const Duration(seconds: 2), () {
-        event.context.router.replace(OnboardingViewRoute());
-      });
+      // Navigate to the onboarding page
+      event.context.router.replace(OnboardingViewRoute());
+      emit(SigninSuccessState());
     } catch (e, stack) {
       FirebaseCrashlytics.instance.recordError(e, stack, fatal: true);
-      FirebaseAuthException exception = e as FirebaseAuthException;
-      if (exception.code == 'invalid-email') {
-        Future.delayed(const Duration(seconds: 2), () {
-          ScaffoldMessenger.of(event.context).showSnackBar(const SnackBar(
-            elevation: 0,
-            backgroundColor: Colors.transparent,
-            content: Text('Your email format is incorrect.'),
-          ));
-        });
-      } else {
-        Future.delayed(const Duration(seconds: 2), () {
-          ScaffoldMessenger.of(event.context).showSnackBar(const SnackBar(
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            content: Text('Email or password incorrect.'),
-          ));
-        });
+      String errorMessage = 'An error occurred. Please try again.';
+      if (e is FirebaseAuthException) {
+        if (e.code == 'invalid-email') {
+          errorMessage = 'Your email format is incorrect.';
+        } else {
+          errorMessage = 'Email or password incorrect.';
+        }
       }
+      emit(SigninFailureState(errorMessage));
+      ScaffoldMessenger.of(event.context).showSnackBar(SnackBar(
+        backgroundColor: Colors.transparent,
+        content: Text(errorMessage),
+      ));
+    }
+  }
+  
+  Future<void> _onSigninWithGoogle(
+      SigninWithGoogleEvent event, Emitter<SigninState> emit) async {
+    emit(SigninLoadingState());
+    try {
+      final User? user = await authService.loginWithGoogle();
+      if (user != null) {
+        // Navigate to the onboarding page
+        event.context.router.replace(OnboardingViewRoute());
+        emit(SigninSuccessState());
+      }
+    } catch (e) {
+      FirebaseCrashlytics.instance.recordError(e, null, fatal: true);
+      emit(SigninFailureState('Google login failed'));
+      ScaffoldMessenger.of(event.context).showSnackBar(const SnackBar(
+        backgroundColor: Colors.transparent,
+        content: Text('Google login failed'),
+      ));
     }
   }
 }

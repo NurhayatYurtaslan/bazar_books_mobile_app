@@ -4,6 +4,7 @@ import 'package:bazar_books_mobile_app/app/views/view_signin/view_model/signin_e
 import 'package:bazar_books_mobile_app/app/views/view_signin/view_model/signin_state.dart';
 import 'package:bazar_books_mobile_app/app/views/view_signin/view_model/signin_view_model.dart';
 import 'package:bazar_books_mobile_app/core/extensions/context_extension.dart';
+import 'package:bazar_books_mobile_app/core/repository/service/auth_service.dart';
 import 'package:bazar_books_mobile_app/core/widgets/custom_button_widget.dart';
 import 'package:bazar_books_mobile_app/core/widgets/custom_password_widget.dart';
 import 'package:bazar_books_mobile_app/core/widgets/custom_text_widget.dart';
@@ -18,7 +19,19 @@ class SignInView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => SigninViewModel(),
+      create: (context) => SigninViewModel(
+        onSuccessCallback: () {
+          // Perform navigation or other success actions
+          Navigator.pushReplacementNamed(context, '/onboarding');
+        },
+        onErrorCallback: (errorMessage) {
+          // Show error message
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            backgroundColor: Colors.transparent,
+            content: Text(errorMessage),
+          ));
+        },
+      ),
       child:
           BlocBuilder<SigninViewModel, SigninState>(builder: (context, state) {
         return Scaffold(
@@ -145,6 +158,20 @@ class SignInView extends StatelessWidget {
                             ),
                           ),
                         ],
+                      ),
+                      CustomButton(
+                        buttonText: 'Google',
+                        onPressed: () async {
+                          final user = await AuthService().loginWithGoogle();
+                          if (user != null) {
+                            // Kullanıcı başarıyla giriş yaptı, yönlendirme veya başka işlemler yapabilirsiniz
+                            context.router.push(OnboardingViewRoute());
+                          } else {
+                            // Giriş işlemi başarısız oldu, hata mesajı gösterebilirsiniz
+                          }
+                        },
+                        buttonBgColor: Colors.white,
+                        buttonTextColor: Colors.black,
                       )
                     ],
                   )

@@ -3,6 +3,7 @@ import 'package:bazar_books_mobile_app/core/repository/model/auth/signup/signup_
 import 'package:bazar_books_mobile_app/core/repository/model/auth/user/user_response_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 //tüm auth islemleri, kayit ol, giris yap, cikis yap,  giris yaptigin bilgileri var mı kontrol et
 class AuthService {
@@ -14,7 +15,8 @@ class AuthService {
   // Kullanıcı kaydı işlemini gerçekleştiren fonksiyon.
   Future signUp(SignUpRequestModel signUpRequestModel) async {
     // Kullanıcının e-posta ve şifre ile Firebase'e kaydını sağlar.
-    final UserCredential userCredential =   // kullanıcının kimlik bilgilerini ve Firebase’e giriş yaparken kullanılan yöntemi içerir.
+    final UserCredential
+        userCredential = // kullanıcının kimlik bilgilerini ve Firebase’e giriş yaparken kullanılan yöntemi içerir.
         await _auth.createUserWithEmailAndPassword(
             email: signUpRequestModel.email,
             password: signUpRequestModel.password);
@@ -53,6 +55,27 @@ class AuthService {
     if (user == null) {
       throw Exception("User is null");
     }
+  }
+
+  Future<User?> loginWithGoogle() async {
+    try {
+      final googleUser = await GoogleSignIn().signIn();
+      final googleAuth = await googleUser?.authentication;
+      final cred = GoogleAuthProvider.credential(
+        idToken: googleAuth?.idToken,
+        accessToken: googleAuth?.accessToken,
+      );
+
+      // signInWithCredential() fonksiyonu bir UserCredential döner.
+      final UserCredential userCredential =
+          await _auth.signInWithCredential(cred);
+
+      // UserCredential'dan User'ı alarak döndürün.
+      return userCredential.user;
+    } catch (e) {
+      print(e.toString());
+    }
+    return null;
   }
 
   // Kullanıcının çıkış yapmasını sağlayan fonksiyon.
