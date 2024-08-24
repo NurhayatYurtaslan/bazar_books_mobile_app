@@ -32,12 +32,10 @@ dependencies:
   firebase_crashlytics: ^4.0.4
   uuid:
 
-  #signin
-  
-
   #for freezed
   freezed_annotation: ^2.4.4
   json_annotation: ^4.9.0
+  #google signin
   google_sign_in: ^6.2.1
 
   
