@@ -13,7 +13,20 @@
           "package_name": "com.example.bazar_books_mobile_app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "839364088106-7nu92qjooski5fm6lisj88h9ufm6vji4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bazar_books_mobile_app",
+            "certificate_hash": "6257f9c65a1b921b8f336e4ec0908b4d850db8c5"
+          }
+        },
+        {
+          "client_id": "839364088106-14a7s4u9arq104fg8176gmfoginu9ecb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyB6lSZhHxjnJLN4z436BH4HHgHQAc_C2mE"
@@ -21,7 +34,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "839364088106-14a7s4u9arq104fg8176gmfoginu9ecb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "839364088106-nmq7gs74p8uba12m2tigvfrtubku9bnk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.bazarBooksMobileApp"
+              }
+            }
+          ]
         }
       }
     },
@@ -32,7 +57,20 @@
           "package_name": "om.example.bazar_books_mobile_app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "839364088106-23rgrhe76q4khvu35n6q0kp21nafks72.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "om.example.bazar_books_mobile_app",
+            "certificate_hash": "6257f9c65a1b921b8f336e4ec0908b4d850db8c5"
+          }
+        },
+        {
+          "client_id": "839364088106-14a7s4u9arq104fg8176gmfoginu9ecb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyB6lSZhHxjnJLN4z436BH4HHgHQAc_C2mE"
@@ -40,7 +78,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "839364088106-14a7s4u9arq104fg8176gmfoginu9ecb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "839364088106-nmq7gs74p8uba12m2tigvfrtubku9bnk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.bazarBooksMobileApp"
+              }
+            }
+          ]
         }
       }
     }
