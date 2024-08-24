@@ -1,12 +1,13 @@
 import 'package:bazar_books_mobile_app/core/extensions/context_extension.dart';
 import 'package:flutter/material.dart';
 
-class SigninAndSignupTextWidget extends StatelessWidget {
+class TitleAndDescriptionWidget extends StatelessWidget {
   final String headerText;
   final String text;
-  const SigninAndSignupTextWidget({
+  const TitleAndDescriptionWidget({
     super.key,
-    required this.headerText, required this.text,
+    required this.headerText,
+    required this.text,
   });
 
   @override

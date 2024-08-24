@@ -7,7 +7,7 @@ import 'package:bazar_books_mobile_app/core/extensions/context_extension.dart';
 import 'package:bazar_books_mobile_app/core/widgets/custom_button_widget.dart';
 import 'package:bazar_books_mobile_app/core/widgets/custom_password_widget.dart';
 import 'package:bazar_books_mobile_app/core/widgets/custom_text_widget.dart';
-import 'package:bazar_books_mobile_app/core/widgets/signin_and_signup_text_widget.dart';
+import 'package:bazar_books_mobile_app/core/widgets/title_and_description_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -32,7 +32,7 @@ class SignInView extends StatelessWidget {
                   SizedBox(
                     height: context.mediumValue * 3,
                   ),
-                  const SigninAndSignupTextWidget(
+                  const TitleAndDescriptionWidget(
                     headerText: 'Welcome Back 👋',
                     text: 'Sign to your account',
                   ),
