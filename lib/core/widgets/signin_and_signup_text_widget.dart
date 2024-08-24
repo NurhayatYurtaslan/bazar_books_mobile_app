@@ -11,34 +11,23 @@ class SigninAndSignupTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(
-          left: context.constMediumValue, top: context.mediumValue),
-      child: Column(
-        crossAxisAlignment:
-            CrossAxisAlignment.start, // Ensure alignment to start
-        children: [
-          // Welcome Back
-          Text(
-            headerText,
-            style: TextStyle(
-              fontSize: context.constMediumValue,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          // Sign to your account
-          Container(
-            alignment: Alignment.centerLeft, // Ensure alignment to the left
-            child: Text(
-              text,
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                  color: Colors.grey.shade500,
-                  fontSize: context.constMediumValue / 1.5),
-            ),
-          ),
-        ],
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(headerText,
+            style: const TextStyle(
+                color: Colors.black,
+                fontSize: 30,
+                fontWeight: FontWeight.bold)),
+        SizedBox(
+          height: context.lowValue,
+        ),
+        Text(
+          text,
+          style: TextStyle(color: Colors.grey.shade500),
+        ),
+      ],
     );
   }
 }
