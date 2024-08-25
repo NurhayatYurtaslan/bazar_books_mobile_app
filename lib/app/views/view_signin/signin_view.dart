@@ -6,6 +6,7 @@ import 'package:bazar_books_mobile_app/app/views/view_signin/view_model/signin_v
 import 'package:bazar_books_mobile_app/core/extensions/context_extension.dart';
 import 'package:bazar_books_mobile_app/core/repository/service/auth_service.dart';
 import 'package:bazar_books_mobile_app/core/widgets/custom_button_widget.dart';
+import 'package:bazar_books_mobile_app/core/widgets/custom_button_with_icon.dart';
 import 'package:bazar_books_mobile_app/core/widgets/custom_password_widget.dart';
 import 'package:bazar_books_mobile_app/core/widgets/custom_text_widget.dart';
 import 'package:bazar_books_mobile_app/core/widgets/title_and_description_widget.dart';
@@ -165,6 +166,7 @@ class SignInView extends StatelessWidget {
                           final user = await AuthService().loginWithGoogle();
                           if (user != null) {
                             // Kullanıcı başarıyla giriş yaptı, yönlendirme veya başka işlemler yapabilirsiniz
+                            // ignore: use_build_context_synchronously
                             context.router.push(OnboardingViewRoute());
                           } else {
                             // Giriş işlemi başarısız oldu, hata mesajı gösterebilirsiniz
@@ -172,7 +174,11 @@ class SignInView extends StatelessWidget {
                         },
                         buttonBgColor: Colors.white,
                         buttonTextColor: Colors.black,
-                      )
+                      ),
+                      SizedBox(
+                        height: context.lowValue,
+                      ),
+                      const CustomButtonWithIcon()
                     ],
                   )
                 ],
@@ -184,3 +190,4 @@ class SignInView extends StatelessWidget {
     );
   }
 }
+
