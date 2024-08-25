@@ -73,9 +73,8 @@ class AuthService {
       // UserCredential'dan User'ı alarak döndürün.
       return userCredential.user;
     } catch (e) {
-      print(e.toString());
+      throw Exception('Giriş işlemi başarısız oldu: $e');
     }
-    return null;
   }
 
   // Kullanıcının çıkış yapmasını sağlayan fonksiyon.
