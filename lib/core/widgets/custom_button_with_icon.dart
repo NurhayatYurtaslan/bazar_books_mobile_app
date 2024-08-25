@@ -2,23 +2,41 @@ import 'package:bazar_books_mobile_app/core/extensions/context_extension.dart';
 import 'package:flutter/material.dart';
 
 class CustomButtonWithIcon extends StatelessWidget {
+  final Color buttonBgColor;
+  final Color buttonTextColor;
+  final VoidCallback onPressed;
   const CustomButtonWithIcon({
     super.key,
+    required this.buttonBgColor,
+    required this.buttonTextColor, required this.onPressed,
   });
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-        onPressed: () {},
-        child: Row(
-          children: [
-            Image.asset(
-              'assets/icons/google_logo.png',
-              width: context.highValue,
-              height: context.highValue,
-            ),
-            const Text("Sign in with Google"),
-          ],
-        ));
+    return SizedBox(
+      height: context.highValue / 1.5,
+      child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+              backgroundColor: buttonBgColor,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30))),
+          onPressed: onPressed,
+          child: Row(
+            children: [
+              Image.asset(
+                'assets/icons/google_logo.png',
+                width: context.highValue,
+                height: context.highValue,
+              ),
+              Text(
+                "Sign in with Google",
+                style: TextStyle(
+                  color: buttonTextColor,
+                  fontSize: 20,
+                ),
+              ),
+            ],
+          )),
+    );
   }
 }
