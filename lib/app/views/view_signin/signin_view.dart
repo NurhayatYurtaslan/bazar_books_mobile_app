@@ -163,7 +163,7 @@ class SignInView extends StatelessWidget {
                       CustomButton(
                         buttonText: 'Google',
                         onPressed: () async {
-                          final user = await AuthService().loginWithGoogle();
+                          final user = await AuthService().loginWithGoogle(context);
                           if (user != null) {
                             // Kullanıcı başarıyla giriş yaptı, yönlendirme veya başka işlemler yapabilirsiniz
                             // ignore: use_build_context_synchronously
@@ -178,7 +178,21 @@ class SignInView extends StatelessWidget {
                       SizedBox(
                         height: context.lowValue,
                       ),
-                      const CustomButtonWithIcon()
+                      CustomButtonWithIcon(
+                        buttonBgColor: Colors.white,
+                        buttonTextColor: Colors.grey.shade700,
+                        onPressed: () async {
+                          final user =
+                              await AuthService().loginWithGoogle(context);
+                          if (user != null) {
+                            // Kullanıcı başarıyla giriş yaptı, yönlendirme veya başka işlemler yapabilirsiniz
+                            // ignore: use_build_context_synchronously
+                            context.router.push(OnboardingViewRoute());
+                          } else {
+                            // Giriş işlemi başarısız oldu, hata mesajı gösterebilirsiniz
+                          }
+                        },
+                      )
                     ],
                   )
                 ],
@@ -190,4 +204,3 @@ class SignInView extends StatelessWidget {
     );
   }
 }
-

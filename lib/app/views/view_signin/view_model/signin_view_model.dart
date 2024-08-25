@@ -11,7 +11,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SigninViewModel extends Bloc<SigninEvent, SigninState> {
-  SigninViewModel({required Null Function() onSuccessCallback, required Null Function(dynamic errorMessage) onErrorCallback}) : super(SigninInitialState()) {
+  SigninViewModel(
+      {required Null Function() onSuccessCallback,
+      required Null Function(dynamic errorMessage) onErrorCallback})
+      : super(SigninInitialState()) {
     on<SigninInitialEvent>(_onSignin);
     on<SigninWithGoogleEvent>(_onSigninWithGoogle);
   }
@@ -49,25 +52,33 @@ class SigninViewModel extends Bloc<SigninEvent, SigninState> {
       ));
     }
   }
-  
+
   Future<void> _onSigninWithGoogle(
       SigninWithGoogleEvent event, Emitter<SigninState> emit) async {
     emit(SigninLoadingState());
     try {
-      final User? user = await authService.loginWithGoogle();
+      final User? user = await authService.loginWithGoogle(event.context);
       if (user != null) {
-        // Navigate to the onboarding page
+        // Kullanıcı başarıyla giriş yaptı, yönlendirme yapabilirsiniz.
         event.context.router.replace(OnboardingViewRoute());
         emit(SigninSuccessState());
       }
     } catch (e) {
-      FirebaseCrashlytics.instance.recordError(e, null, fatal: true);
-      emit(SigninFailureState('Google login failed'));
-      // ignore: use_build_context_synchronously
-      ScaffoldMessenger.of(event.context).showSnackBar(const SnackBar(
-        backgroundColor: Colors.transparent,
-        content: Text('Google login failed'),
-      ));
+      if (e.toString() == "Exception: Login with Google has been canceled") {
+        ScaffoldMessenger.of(event.context).showSnackBar(
+          const SnackBar(
+            content: Text("Login with Google has been canceled"),
+          ),
+        );
+      } else {
+        FirebaseCrashlytics.instance.recordError(e, null, fatal: true);
+        ScaffoldMessenger.of(event.context).showSnackBar(
+          const SnackBar(
+            content: Text("Google login failed"),
+          ),
+        );
+      }
+      emit(SigninFailureState(e.toString()));
     }
   }
 }
