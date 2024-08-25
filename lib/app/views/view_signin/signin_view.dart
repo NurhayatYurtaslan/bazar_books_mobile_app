@@ -85,9 +85,7 @@ class SignInView extends StatelessWidget {
                               return null;
                             },
                           ),
-                          const SizedBox(
-                            height: 20,
-                          ),
+                          SizedBox(height: context.lowValue),
                           Container(
                             alignment: Alignment.centerLeft,
                             child: InkWell(
@@ -96,8 +94,8 @@ class SignInView extends StatelessWidget {
                               child: Text(
                                 "Forgot Password?",
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 17,
                                     color: Theme.of(context).primaryColor),
                               ),
                             ),
