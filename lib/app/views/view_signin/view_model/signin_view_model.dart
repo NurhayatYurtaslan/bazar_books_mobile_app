@@ -42,6 +42,7 @@ class SigninViewModel extends Bloc<SigninEvent, SigninState> {
         }
       }
       emit(SigninFailureState(errorMessage));
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(event.context).showSnackBar(SnackBar(
         backgroundColor: Colors.transparent,
         content: Text(errorMessage),
@@ -62,6 +63,7 @@ class SigninViewModel extends Bloc<SigninEvent, SigninState> {
     } catch (e) {
       FirebaseCrashlytics.instance.recordError(e, null, fatal: true);
       emit(SigninFailureState('Google login failed'));
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(event.context).showSnackBar(const SnackBar(
         backgroundColor: Colors.transparent,
         content: Text('Google login failed'),
