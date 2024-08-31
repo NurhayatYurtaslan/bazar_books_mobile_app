@@ -16,7 +16,7 @@ class CustomButton extends StatelessWidget {
     required this.onPressed,
     required this.buttonBgColor,
     required this.buttonTextColor,
-    this.buttonBorderRadius = const BorderRadius.all(Radius.circular(30)), 
+    this.buttonBorderRadius = const BorderRadius.all(Radius.circular(30)),
     this.buttonHeight,
     this.buttonWidth,
   });
@@ -24,8 +24,8 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: buttonHeight?? context.highValue / 1.5,
-      width: buttonWidth?? context.width,
+      height: buttonHeight ?? context.highValue / 1.5,
+      width: buttonWidth ?? context.width,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
