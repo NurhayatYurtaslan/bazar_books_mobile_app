@@ -127,6 +127,9 @@ class OnboardingView extends StatelessWidget {
                               height: context.height * 0.02,
                             ),
                             CustomButton(
+                                buttonBorderRadius: BorderRadius.circular(20),
+                                buttonHeight: context.highValue * 0.7,
+                                buttonWidth: context.width * 0.9,
                                 buttonText: onboardingPages(context)[index][3]!,
                                 onPressed: () {
                                   context.read<OnboardingViewModel>().add(
