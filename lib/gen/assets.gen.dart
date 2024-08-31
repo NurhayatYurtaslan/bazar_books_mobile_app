@@ -9,6 +9,17 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsIconsGen {
+  const $AssetsIconsGen();
+
+  /// File path: assets/icons/google_logo.png
+  AssetGenImage get googleLogo =>
+      const AssetGenImage('assets/icons/google_logo.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [googleLogo];
+}
+
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
@@ -39,6 +50,7 @@ class $AssetsImagesGen {
 class Assets {
   Assets._();
 
+  static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
