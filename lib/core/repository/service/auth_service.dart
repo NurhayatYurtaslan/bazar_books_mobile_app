@@ -32,14 +32,8 @@ class AuthService {
 
     // Kullanıcının bilgilerini Firestore'daki "users" koleksiyonuna ekler.
     await _firestore.collection("users").doc(user.uid).set(({
-          "userType": signUpRequestModel.userType,
-          "userName": signUpRequestModel.userName,
-          "name": signUpRequestModel.name,
-          "surname": signUpRequestModel.surname,
-          "email": signUpRequestModel.email,
-          "phoneNumber": signUpRequestModel.phoneNumber,
-          "address": signUpRequestModel.address,
-          "birth": signUpRequestModel.birth
+          "name":signUpRequestModel.name,
+          "email":signUpRequestModel.email,
         }));
 
     return signUpRequestModel;
@@ -97,7 +91,7 @@ Future<User?> loginWithGoogle(BuildContext context) async {
     
     // Geri dönme işlemi
     // ignore: use_build_context_synchronously
-    context.router.push(const SigninViewRoute());
+    context.router.push(const SignInViewRoute());
   }
   return null;
 }
