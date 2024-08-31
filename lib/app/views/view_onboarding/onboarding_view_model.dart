@@ -44,7 +44,7 @@ class OnboardingView extends StatelessWidget {
                                 child: TextButtonWidget(
                                   onPressed: () {
                                     context.router
-                                        .replace(const SigninViewRoute());
+                                        .replace(const SignInViewRoute());
                                   },
                                   text: 'Skip',
                                   textColor: ColorConstants.primaryColor,
@@ -144,7 +144,7 @@ class OnboardingView extends StatelessWidget {
                             ),
                             TextButtonWidget(
                               onPressed: () {
-                                context.router.replace(const SigninViewRoute());
+                                context.router.replace(const SignInViewRoute());
                               },
                               text: 'Sign In',
                               textColor: ColorConstants.primaryColor,
