@@ -29,6 +29,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const SignInView(),
       );
     },
+    SignUpViewRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SignUpView(),
+      );
+    },
     SplashViewRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -77,6 +83,20 @@ class SignInViewRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'SignInViewRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SignUpView]
+class SignUpViewRoute extends PageRouteInfo<void> {
+  const SignUpViewRoute({List<PageRouteInfo>? children})
+      : super(
+          SignUpViewRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SignUpViewRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
