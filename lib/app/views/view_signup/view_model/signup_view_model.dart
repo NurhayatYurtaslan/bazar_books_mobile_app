@@ -19,6 +19,7 @@ class SignUpViewModel extends Bloc<SignUpEvent, SignUpState> {
   TextEditingController surnameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController emailController = TextEditingController();
+  FocusNode passwordFocusNode = FocusNode(); // Add this line
 
   AuthService authService = AuthService();
 
