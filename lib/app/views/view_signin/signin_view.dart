@@ -128,7 +128,7 @@ class SignInView extends StatelessWidget {
                               ),
                               InkWell(
                                   onTap: () => context.router
-                                      .push(OnboardingViewRoute()),
+                                      .push(const SignUpViewRoute()),
                                   child: Text(
                                     'Sign Up',
                                     style: TextStyle(

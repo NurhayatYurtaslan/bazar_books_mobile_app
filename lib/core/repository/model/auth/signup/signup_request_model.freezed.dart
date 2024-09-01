@@ -20,16 +20,9 @@ SignUpRequestModel _$SignUpRequestModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$SignUpRequestModel {
-  bool get userType => throw _privateConstructorUsedError;
-  String get userName => throw _privateConstructorUsedError;
-  String? get photoUrl => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  String get surname => throw _privateConstructorUsedError;
-  String get address => throw _privateConstructorUsedError;
-  String get phoneNumber => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
-  String get birth => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -43,17 +36,7 @@ abstract class $SignUpRequestModelCopyWith<$Res> {
           SignUpRequestModel value, $Res Function(SignUpRequestModel) then) =
       _$SignUpRequestModelCopyWithImpl<$Res, SignUpRequestModel>;
   @useResult
-  $Res call(
-      {bool userType,
-      String userName,
-      String? photoUrl,
-      String name,
-      String surname,
-      String address,
-      String phoneNumber,
-      String email,
-      String password,
-      String birth});
+  $Res call({String name, String email, String password});
 }
 
 /// @nodoc
@@ -69,45 +52,14 @@ class _$SignUpRequestModelCopyWithImpl<$Res, $Val extends SignUpRequestModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userType = null,
-    Object? userName = null,
-    Object? photoUrl = freezed,
     Object? name = null,
-    Object? surname = null,
-    Object? address = null,
-    Object? phoneNumber = null,
     Object? email = null,
     Object? password = null,
-    Object? birth = null,
   }) {
     return _then(_value.copyWith(
-      userType: null == userType
-          ? _value.userType
-          : userType // ignore: cast_nullable_to_non_nullable
-              as bool,
-      userName: null == userName
-          ? _value.userName
-          : userName // ignore: cast_nullable_to_non_nullable
-              as String,
-      photoUrl: freezed == photoUrl
-          ? _value.photoUrl
-          : photoUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      surname: null == surname
-          ? _value.surname
-          : surname // ignore: cast_nullable_to_non_nullable
-              as String,
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      phoneNumber: null == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
       email: null == email
           ? _value.email
@@ -116,10 +68,6 @@ class _$SignUpRequestModelCopyWithImpl<$Res, $Val extends SignUpRequestModel>
       password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as String,
-      birth: null == birth
-          ? _value.birth
-          : birth // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -133,17 +81,7 @@ abstract class _$$SignUpRequestModelImplCopyWith<$Res>
       __$$SignUpRequestModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {bool userType,
-      String userName,
-      String? photoUrl,
-      String name,
-      String surname,
-      String address,
-      String phoneNumber,
-      String email,
-      String password,
-      String birth});
+  $Res call({String name, String email, String password});
 }
 
 /// @nodoc
@@ -157,45 +95,14 @@ class __$$SignUpRequestModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userType = null,
-    Object? userName = null,
-    Object? photoUrl = freezed,
     Object? name = null,
-    Object? surname = null,
-    Object? address = null,
-    Object? phoneNumber = null,
     Object? email = null,
     Object? password = null,
-    Object? birth = null,
   }) {
     return _then(_$SignUpRequestModelImpl(
-      userType: null == userType
-          ? _value.userType
-          : userType // ignore: cast_nullable_to_non_nullable
-              as bool,
-      userName: null == userName
-          ? _value.userName
-          : userName // ignore: cast_nullable_to_non_nullable
-              as String,
-      photoUrl: freezed == photoUrl
-          ? _value.photoUrl
-          : photoUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      surname: null == surname
-          ? _value.surname
-          : surname // ignore: cast_nullable_to_non_nullable
-              as String,
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      phoneNumber: null == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
       email: null == email
           ? _value.email
@@ -205,10 +112,6 @@ class __$$SignUpRequestModelImplCopyWithImpl<$Res>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
-      birth: null == birth
-          ? _value.birth
-          : birth // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -217,44 +120,21 @@ class __$$SignUpRequestModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$SignUpRequestModelImpl implements _SignUpRequestModel {
   const _$SignUpRequestModelImpl(
-      {required this.userType,
-      required this.userName,
-      this.photoUrl,
-      required this.name,
-      required this.surname,
-      required this.address,
-      required this.phoneNumber,
-      required this.email,
-      required this.password,
-      required this.birth});
+      {required this.name, required this.email, required this.password});
 
   factory _$SignUpRequestModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$SignUpRequestModelImplFromJson(json);
 
   @override
-  final bool userType;
-  @override
-  final String userName;
-  @override
-  final String? photoUrl;
-  @override
   final String name;
-  @override
-  final String surname;
-  @override
-  final String address;
-  @override
-  final String phoneNumber;
   @override
   final String email;
   @override
   final String password;
-  @override
-  final String birth;
 
   @override
   String toString() {
-    return 'SignUpRequestModel(userType: $userType, userName: $userName, photoUrl: $photoUrl, name: $name, surname: $surname, address: $address, phoneNumber: $phoneNumber, email: $email, password: $password, birth: $birth)';
+    return 'SignUpRequestModel(name: $name, email: $email, password: $password)';
   }
 
   @override
@@ -262,27 +142,15 @@ class _$SignUpRequestModelImpl implements _SignUpRequestModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SignUpRequestModelImpl &&
-            (identical(other.userType, userType) ||
-                other.userType == userType) &&
-            (identical(other.userName, userName) ||
-                other.userName == userName) &&
-            (identical(other.photoUrl, photoUrl) ||
-                other.photoUrl == photoUrl) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.surname, surname) || other.surname == surname) &&
-            (identical(other.address, address) || other.address == address) &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                other.phoneNumber == phoneNumber) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
-                other.password == password) &&
-            (identical(other.birth, birth) || other.birth == birth));
+                other.password == password));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, userType, userName, photoUrl,
-      name, surname, address, phoneNumber, email, password, birth);
+  int get hashCode => Object.hash(runtimeType, name, email, password);
 
   @JsonKey(ignore: true)
   @override
@@ -301,40 +169,19 @@ class _$SignUpRequestModelImpl implements _SignUpRequestModel {
 
 abstract class _SignUpRequestModel implements SignUpRequestModel {
   const factory _SignUpRequestModel(
-      {required final bool userType,
-      required final String userName,
-      final String? photoUrl,
-      required final String name,
-      required final String surname,
-      required final String address,
-      required final String phoneNumber,
+      {required final String name,
       required final String email,
-      required final String password,
-      required final String birth}) = _$SignUpRequestModelImpl;
+      required final String password}) = _$SignUpRequestModelImpl;
 
   factory _SignUpRequestModel.fromJson(Map<String, dynamic> json) =
       _$SignUpRequestModelImpl.fromJson;
 
   @override
-  bool get userType;
-  @override
-  String get userName;
-  @override
-  String? get photoUrl;
-  @override
   String get name;
-  @override
-  String get surname;
-  @override
-  String get address;
-  @override
-  String get phoneNumber;
   @override
   String get email;
   @override
   String get password;
-  @override
-  String get birth;
   @override
   @JsonKey(ignore: true)
   _$$SignUpRequestModelImplCopyWith<_$SignUpRequestModelImpl> get copyWith =>

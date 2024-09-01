@@ -21,6 +21,7 @@ class OnboardingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: BlocProvider(
           create: (context) => OnboardingViewModel(),
           child: BlocBuilder<OnboardingViewModel, OnboardingState>(
@@ -44,7 +45,7 @@ class OnboardingView extends StatelessWidget {
                                 child: TextButtonWidget(
                                   onPressed: () {
                                     context.router
-                                        .replace(const SigninViewRoute());
+                                        .replace(const SignInViewRoute());
                                   },
                                   text: 'Skip',
                                   textColor: ColorConstants.primaryColor,
@@ -144,7 +145,7 @@ class OnboardingView extends StatelessWidget {
                             ),
                             TextButtonWidget(
                               onPressed: () {
-                                context.router.replace(const SigninViewRoute());
+                                context.router.replace(const SignInViewRoute());
                               },
                               text: 'Sign In',
                               textColor: ColorConstants.primaryColor,
