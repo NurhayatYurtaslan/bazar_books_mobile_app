@@ -43,7 +43,7 @@ class PasswordRequirementItem extends StatelessWidget {
           isValid ? Icons.check_circle : Icons.cancel,
           color: isValid ? Colors.green : Colors.red,
         ),
-        SizedBox(width: 8),
+        const SizedBox(width: 8),
         Text(
           text,
           style: TextStyle(color: isValid ? Colors.green : Colors.red),

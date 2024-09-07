@@ -3,6 +3,7 @@ import 'package:bazar_books_mobile_app/app/views/view_onboarding/onboarding_view
 import 'package:bazar_books_mobile_app/app/views/view_signin/signin_view.dart';
 import 'package:bazar_books_mobile_app/app/views/view_signup/signup_view.dart';
 import 'package:bazar_books_mobile_app/app/views/view_splash/splash_view.dart';
+import 'package:bazar_books_mobile_app/app/views/view_success/success_view.dart';
 import 'package:flutter/material.dart';
 
 part "app_router.gr.dart";
@@ -15,7 +16,8 @@ class AppRouter extends _$AppRouter {
   List<AutoRoute> get routes => [
         AutoRoute(page: SplashViewRoute.page),
         AutoRoute(page: OnboardingViewRoute.page),
-        AutoRoute(initial: true, page: SignInViewRoute.page),
+        AutoRoute(page: SignInViewRoute.page),
         AutoRoute(page: SignUpViewRoute.page),
+        AutoRoute(initial: true, page: SuccessViewRoute.page)
       ];
 }

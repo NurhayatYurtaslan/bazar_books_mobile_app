@@ -24,8 +24,12 @@ mixin _$SignUpRequestModel {
   String get email => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
 
+  /// Serializes this SignUpRequestModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SignUpRequestModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SignUpRequestModelCopyWith<SignUpRequestModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -49,6 +53,8 @@ class _$SignUpRequestModelCopyWithImpl<$Res, $Val extends SignUpRequestModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SignUpRequestModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +98,8 @@ class __$$SignUpRequestModelImplCopyWithImpl<$Res>
       $Res Function(_$SignUpRequestModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SignUpRequestModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -148,11 +156,13 @@ class _$SignUpRequestModelImpl implements _SignUpRequestModel {
                 other.password == password));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, name, email, password);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SignUpRequestModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SignUpRequestModelImplCopyWith<_$SignUpRequestModelImpl> get copyWith =>
@@ -182,8 +192,11 @@ abstract class _SignUpRequestModel implements SignUpRequestModel {
   String get email;
   @override
   String get password;
+
+  /// Create a copy of SignUpRequestModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SignUpRequestModelImplCopyWith<_$SignUpRequestModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

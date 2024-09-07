@@ -19,7 +19,7 @@ class OnboardingViewModel extends Bloc<OnboardingEvent, OnboardingState> {
       event.pageController.animateToPage(event.page,
           duration: const Duration(milliseconds: 400), curve: Curves.easeInOut);
     } else {
-      event.context.router.replace(const SplashViewRoute());
+      event.context.router.replace(const SignInViewRoute());
     }
     emit(OnboardingInitialState(event.page));
   }

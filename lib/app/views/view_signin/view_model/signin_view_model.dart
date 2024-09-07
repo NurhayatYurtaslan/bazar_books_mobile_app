@@ -65,6 +65,7 @@ class SigninViewModel extends Bloc<SigninEvent, SigninState> {
       }
     } catch (e) {
       if (e.toString() == "Exception: Login with Google has been canceled") {
+        // ignore: use_build_context_synchronously
         ScaffoldMessenger.of(event.context).showSnackBar(
           const SnackBar(
             content: Text("Login with Google has been canceled"),
@@ -72,6 +73,7 @@ class SigninViewModel extends Bloc<SigninEvent, SigninState> {
         );
       } else {
         FirebaseCrashlytics.instance.recordError(e, null, fatal: true);
+        // ignore: use_build_context_synchronously
         ScaffoldMessenger.of(event.context).showSnackBar(
           const SnackBar(
             content: Text("Google login failed"),

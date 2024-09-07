@@ -41,6 +41,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const SplashView(),
       );
     },
+    SuccessViewRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SuccessView(),
+      );
+    },
   };
 }
 
@@ -111,6 +117,20 @@ class SplashViewRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'SplashViewRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SuccessView]
+class SuccessViewRoute extends PageRouteInfo<void> {
+  const SuccessViewRoute({List<PageRouteInfo>? children})
+      : super(
+          SuccessViewRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SuccessViewRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
