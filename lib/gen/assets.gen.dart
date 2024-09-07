@@ -42,9 +42,12 @@ class $AssetsImagesGen {
   /// File path: assets/images/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
 
+  /// File path: assets/images/success.png
+  AssetGenImage get success => const AssetGenImage('assets/images/success.png');
+
   /// List of all assets
   List<AssetGenImage> get values =>
-      [onboardingOne, onboardingThree, onboardingTwo, appLogo, logo];
+      [onboardingOne, onboardingThree, onboardingTwo, appLogo, logo, success];
 }
 
 class Assets {
