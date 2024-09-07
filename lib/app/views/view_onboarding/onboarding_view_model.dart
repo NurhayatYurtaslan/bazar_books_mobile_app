@@ -51,7 +51,7 @@ class OnboardingView extends StatelessWidget {
                                   textColor: ColorConstants.primaryColor,
                                 )),
                             SizedBox(
-                              width: context.width * 0.90,
+                              width: context.width * 0.70,
                               child: Image.asset(
                                 onboardingPages(context)[index][0]!,
                               ),
@@ -130,7 +130,7 @@ class OnboardingView extends StatelessWidget {
                             CustomButton(
                                 buttonBorderRadius: BorderRadius.circular(20),
                                 buttonHeight: context.highValue * 0.7,
-                                buttonWidth: context.width * 0.9,
+                                buttonWidth: context.width * 0.8,
                                 buttonText: onboardingPages(context)[index][3]!,
                                 onPressed: () {
                                   context.read<OnboardingViewModel>().add(

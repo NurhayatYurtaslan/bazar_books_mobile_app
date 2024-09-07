@@ -33,6 +33,7 @@ class SignUpViewModel extends Bloc<SignUpEvent, SignUpState> {
       ));
 
       Future.delayed(const Duration(seconds: 2), () {
+        // ignore: use_build_context_synchronously
         Navigator.of(event.context).push(MaterialPageRoute(builder: (context) {
           return const SignInView();
         }));
