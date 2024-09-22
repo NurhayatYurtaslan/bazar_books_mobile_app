@@ -67,7 +67,7 @@ class SignInView extends StatelessWidget {
                             keyboardType: TextInputType.emailAddress,
                             validator: (value) {
                               if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value!)) {
-                                return 'validEmailMessage';
+                                return 'Please Enter a Valid E-Mail Address';
                               }
                               return null;
                             },
